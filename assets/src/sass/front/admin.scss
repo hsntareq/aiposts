@@ -1,0 +1,58 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+  --sr-dark-5: #555;
+  --sr-dark-7: #777;
+  --bc-lightorange: #EA5455;
+  --text-lightorange: #EA5455;
+}
+
+$hover : #fff;
+$dark-5 : #555;
+$dark-7 : #777;
+$bc-lightorange : #EA5455;
+
+.sr-text-dark-5 {
+  color: $dark-5;
+}
+
+.sr-text-dark-7 {
+  color: $dark-7;
+}
+
+.sr-bc-lightorange {
+  border-color: var(--bc-lightorange);
+}
+
+/*Frontend Admin styles*/
+body {
+  color: #666;
+}
+
+aside {}
+
+nav {
+  li {
+    a {
+      &:hover {
+        svg {
+          path {
+            stroke: $hover;
+          }
+        }
+      }
+    }
+  }
+}
+
+button.sr-button {
+  &:hover {
+    svg {
+      path {
+        stroke: $hover;
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+<input type="text" placeholder="Type your text here">

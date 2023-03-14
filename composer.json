@@ -1,0 +1,28 @@
+{
+	"name": "codergens/servicer",
+	"description": "Codergens plugin boilerplate.",
+	"keywords": [
+		"WordPress",
+		"Plugin"
+	],
+	"license": "GPL-3.0",
+	"version": "1.0.0",
+	"authors": [
+		{
+			"name": "Codergens",
+			"email": "hello@codergens.com",
+			"homepage": "https://github.com/codergens"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Servicer\\": "./inc"
+		},
+		"files": [
+			"./inc/Functions.php"
+		]
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^3.7"
+	}
+}
