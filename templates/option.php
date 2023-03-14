@@ -9,7 +9,7 @@
     </div>
     <div class="ap-mt-5 ap-w-full ap-flex ap-gap-10 ap-items-start">
         <main class="ap-flex-1">
-            <form action="" class="ap-w-1/2 ap-mx-auto">
+            <form action="" class="ap-w-1/2">
                 <div class="ap-flex ap-bg-slate-50 ap-justify-between ap-items-center ap-py-2 ap-px-3 ap-rounded-md ap-shadow-md ap-gap-3">
                     <label class="ap-flex-1" for="keywords">
                         <input class="ap-px-3 ap-py-2 ap-bg-white ap-border ap-shadow-sm ap-border-slate-300 ap-placeholder-slate-400 disabled:ap-bg-slate-50 disabled:ap-text-slate-500 disabled:ap-border-slate-200 focus:ap-outline-none focus:ap-border-sky-500 focus:ap-ring-sky-500 ap-block ap-w-full ap-rounded-md sm:ap-text-sm focus:ap-ring-1 invalid:ap-border-pink-500 invalid:ap-text-pink-600 focus:ap-invalid:ap-border-pink-500 focus:ap-invalid:ring-pink-500 disabled:ap-shadow-none" type="text" name="keywords" id="keywords" placeholder="Keyword for generating post/page" />
