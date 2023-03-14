@@ -4,9 +4,12 @@ module.exports = {
     content: [
         "./templates/*.php",
         "./templates/**/*.php",
+        "./assets/**/*.svg",
     ],
     theme: {
         extend: {},
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/forms')
+    ],
 }

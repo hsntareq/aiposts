@@ -5,90 +5,27 @@
             <small>These data will only save for <code class="ap-rounded-md">AiPosts</code> application
                 management</small>
         </div>
-        <button class="ap-bg-blue-500 ap-py-2 ap-px-4 ap-shadow-sm ap-text-white ap-rounded-md">Save</button>
+
     </div>
     <div class="ap-mt-5 ap-w-full ap-flex ap-gap-10 ap-items-start">
-        <nav class="ap-bg-gray-50 ap-px-5 ap-py-10 ap-w-[200px] ap-border ap-shadow-sm ap-border ap-rounded-md
-        ap-bg-gray-50 ">
-            <ul>
-                <li>
-                    <a class="ap-border-l ap-transition focus:ap-shadow-none ap-border-gray-400 ap-py-1 ap-mb-3
-                    ap-px-4
-                    ap-block
-                    ap-text-sm
-                    ap-font-semibold" href="#">General</a>
-                </li>
-                <li>
-                    <a class="ap-border-l ap-transition focus:ap-shadow-none hover:ap-border-gray-400
-                    ap-border-gray-50
-                    ap-py-1
-                    ap-mb-3
-                    ap-px-4
-                    ap-block
-                    ap-text-sm
-                    ap-font-semibold" href="#">About</a>
-                </li>
-                <li>
-                    <a class="ap-border-l ap-transition focus:ap-shadow-none hover:ap-border-gray-400
-                    ap-border-gray-50
-                    ap-py-1
-                    ap-mb-3
-                    ap-px-4
-                    ap-block
-                    ap-text-sm
-                    ap-font-semibold" href="#">Section</a>
-                </li>
-                <li>
-                    <a class="ap-border-l ap-transition focus:ap-shadow-none hover:ap-border-gray-400
-                    ap-border-gray-50
-                    ap-py-1
-                    ap-mb-3
-                    ap-px-4
-                    ap-block
-                    ap-text-sm
-                    ap-font-semibold" href="#">Miscellaneous</a>
-                </li>
-                <li>
-                    <a class="ap-border-l ap-transition focus:ap-shadow-none hover:ap-border-gray-400
-                    ap-border-gray-50
-                    ap-py-1
-                    ap-mb-3
-                    ap-px-4
-                    ap-block
-                    ap-text-sm
-                    ap-font-semibold" href="#">Tools Section</a>
-                </li>
-            </ul>
-        </nav>
         <main class="ap-flex-1">
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
-            <?php _get_template('form-item'); ?>
+            <form action="" class="ap-w-1/2 ap-mx-auto">
+                <div class="ap-flex ap-bg-slate-50 ap-justify-between ap-items-center ap-py-2 ap-px-3 ap-rounded-md ap-shadow-md ap-gap-3">
+                    <label class="ap-flex-1" for="keywords">
+                        <input class="ap-px-3 ap-py-2 ap-bg-white ap-border ap-shadow-sm ap-border-slate-300 ap-placeholder-slate-400 disabled:ap-bg-slate-50 disabled:ap-text-slate-500 disabled:ap-border-slate-200 focus:ap-outline-none focus:ap-border-sky-500 focus:ap-ring-sky-500 ap-block ap-w-full ap-rounded-md sm:ap-text-sm focus:ap-ring-1 invalid:ap-border-pink-500 invalid:ap-text-pink-600 focus:ap-invalid:ap-border-pink-500 focus:ap-invalid:ring-pink-500 disabled:ap-shadow-none" type="text" name="keywords" id="keywords" placeholder="Keyword for generating post/page" />
+                    </label>
+                    <label class="ap-flex-1" for="post_type">
+                        <select class="ap-w-full ap-py-1 ap-px-3 ap-ring-0" name="post_type" id="post_type">
+                            <option value="post">Post</option>
+                            <option value="page">Page</option>
+                        </select>
+                    </label>
+                    <label class="ap-flex-1" for="number">
+                        <input class="ap-w-full ap-py-1 ap-px-3 ap-ring-0" type="text" name="number" id="number" />
+                    </label>
+                    <button class="ap-bg-blue-500 ap-py-2 ap-px-4 ap-shadow-sm ap-text-white ap-rounded-md">Generate</button>
+                </div>
+            </form>
         </main>
     </div>
 </div>

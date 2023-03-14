@@ -58,11 +58,6 @@ class Option
 	}
 
 
-	function add_svg_icons($key, $value)
-	{
-		//		return apply_filters( 'svg_icon', self::add_svg_array( $key, $value ) );
-	}
-
 	public function plugin_menu()
 	{
 		add_menu_page('AiPosts', 'AiPosts', 'manage_options', 'ap-option', array(
@@ -73,7 +68,7 @@ class Option
 			$this,
 			'option_page_view'
 		));
-		add_submenu_page(null, 'AP Settings', 'AiPosts', 'manage_options', 'ap-option', array(
+		add_submenu_page('ap-option', 'AP Settings', 'AP Settings', 'manage_options', 'ap-option-child', array(
 			$this,
 			'option_child_view'
 		));
@@ -94,6 +89,6 @@ class Option
 		$post_types = self::get_authors();
 		$icons      = self::svg_icon();
 
-		_get_template('option');
+		_get_template('option-child');
 	}
 }
