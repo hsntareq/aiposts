@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    prefix: 'sr-',
+    prefix: 'ap-',
     content: [
         "./templates/*.php",
         "./templates/**/*.php",

@@ -1,4 +1,4 @@
-=== Servicer ===
+=== AiPosts ===
 Contributors: codergens
 Tags: plugin, wordpress
 Requires at least: 5.6

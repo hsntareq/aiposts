@@ -3,8 +3,8 @@
 @import "tailwindcss/utilities";
 
 :root {
-  --sr-dark-5: #555;
-  --sr-dark-7: #777;
+  --ap-dark-5: #555;
+  --ap-dark-7: #777;
   --bc-lightorange: #EA5455;
   --text-lightorange: #EA5455;
 }
@@ -14,15 +14,15 @@ $dark-5 : #555;
 $dark-7 : #777;
 $bc-lightorange : #EA5455;
 
-.sr-text-dark-5 {
+.ap-text-dark-5 {
   color: $dark-5;
 }
 
-.sr-text-dark-7 {
+.ap-text-dark-7 {
   color: $dark-7;
 }
 
-.sr-bc-lightorange {
+.ap-bc-lightorange {
   border-color: var(--bc-lightorange);
 }
 
@@ -47,7 +47,7 @@ nav {
   }
 }
 
-button.sr-button {
+button.ap-button {
   &:hover {
     svg {
       path {

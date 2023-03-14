@@ -3,10 +3,10 @@
 /**
  * Useful helper traits
  *
- * @package Servicer
+ * @package AiPosts
  */
 
-namespace Servicer\Traits;
+namespace AiPosts\Traits;
 
 defined('ABSPATH') || exit;
 
@@ -19,7 +19,7 @@ trait Helpers
 	public static function svg_icon($key = null, $base46 = false)
 	{
 
-		$svg_path = SERVICER_ASSET_PATH . 'images' . DIRECTORY_SEPARATOR . 'svg_icons';
+		$svg_path = AIPOSTS_ASSET_PATH . 'images' . DIRECTORY_SEPARATOR . 'svg_icons';
 		$files_array = array_values(array_diff(scandir($svg_path), array('.', '..')));
 
 		$svg_files_array = [];
@@ -109,6 +109,6 @@ trait Helpers
 			'prev_text' => '&#8592;',
 			'next_text' => '&#8594;',
 		);
-		echo '<div class="servicer-pagination">' . paginate_links($pagination_args) . '</div>';
+		echo '<div class="aiposts-pagination">' . paginate_links($pagination_args) . '</div>';
 	}
 }

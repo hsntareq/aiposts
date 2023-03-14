@@ -2,8 +2,8 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Servicer 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/servicer\n"
+"Project-Id-Version: AiPosts 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/aiposts\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,15 +12,15 @@ msgstr ""
 "POT-Creation-Date: 2022-11-05T19:02:24+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
-"X-Domain: servicer\n"
+"X-Domain: aiposts\n"
 
 #. Plugin Name of the plugin
 #: inc/Setup/Setup.php:71
-msgid "Servicer"
+msgid "AiPosts"
 msgstr ""
 
 #. Description of the plugin
-msgid "CoderGens Servicer boulerplate."
+msgid "CoderGens AiPosts boulerplate."
 msgstr ""
 
 #. Author of the plugin

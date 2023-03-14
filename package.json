@@ -1,5 +1,5 @@
 {
-    "name": "servicer",
+    "name": "aiposts",
     "version": "1.0.0",
     "description": "CoderGens plugin boilerplate.",
     "main": "index.js",
@@ -7,8 +7,8 @@
         "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run dev -- --watch",
         "prod": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "makepot": "wp i18n make-pot --exclude='src,node_modules,vendor' . languages/servicer.pot",
-        "bundle": "dir-archiver --src . --dest ../servicer.zip --exclude .DS_Store .eslintrc.json .eslintignore mix-manifest.json .git .gitattributes .github .gitignore phpcs.xml README.md composer.json composer.lock node_modules package-lock.json package.json webpack.mix.js src",
+        "makepot": "wp i18n make-pot --exclude='src,node_modules,vendor' . languages/aiposts.pot",
+        "bundle": "dir-archiver --src . --dest ../aiposts.zip --exclude .DS_Store .eslintrc.json .eslintignore mix-manifest.json .git .gitattributes .github .gitignore phpcs.xml README.md composer.json composer.lock node_modules package-lock.json package.json webpack.mix.js src",
         "lint": "eslint \"./**/*.js\""
     },
     "devDependencies": {

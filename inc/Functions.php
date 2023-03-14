@@ -1,11 +1,11 @@
 <?php
 
-use Servicer\Traits\Helpers;
+use AiPosts\Traits\Helpers;
 
 /**
  * Provides useful utility functions
  *
- * @package Servicer
+ * @package AiPosts
  */
 
 defined('ABSPATH') || exit;
@@ -22,7 +22,7 @@ function _sr_enqueue_script($file_name): void
 	$_tag  = 'js' === $type ? 'script' : 'link';
 	$_attr = 'js' === $type ? 'src' : 'href';
 	$_rel  = 'js' === $type ? '' : ' rel="stylesheet"';
-	$_url  = SERVICER_ASSET_URL . $type . DIRECTORY_SEPARATOR . $file_name;
+	$_url  = AIPOSTS_ASSET_URL . $type . DIRECTORY_SEPARATOR . $file_name;
 
 	printf('<%1$s %3$s="%2$s"%4$s></%1$s>', $_tag, esc_url($_url), $_attr, $_rel);
 }
@@ -39,7 +39,7 @@ function _get_uri(): string
 
 function _get_template($name, $die = false, $dir = null): void
 {
-	$file = SERVICER_DIR_PATH . "templates/{$name}.php";
+	$file = AIPOSTS_DIR_PATH . "templates/{$name}.php";
 	if (file_exists($file)) {
 		include $file;
 	}
@@ -71,9 +71,9 @@ function _get_svg($key, $print = true, $base64 = false)
 function _get_view($name, $die = false, $dir = null): void
 {
 	if (strpos($name, '/') !== false) {
-		include SERVICER_DIR_PATH . $name;
+		include AIPOSTS_DIR_PATH . $name;
 	} else {
-		include SERVICER_DIR_PATH . "views/{$name}.php";
+		include AIPOSTS_DIR_PATH . "views/{$name}.php";
 	}
 	if (true === $die) {
 		die;
@@ -87,7 +87,7 @@ function _get_view($name, $die = false, $dir = null): void
  *
  * @return string
  */
-function servicer_estimated_reading_time(string $content): string
+function aiposts_estimated_reading_time(string $content): string
 {
 
 	$words  = str_word_count(strip_tags($content));

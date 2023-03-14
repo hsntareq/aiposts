@@ -3,12 +3,12 @@
 /**
  * Handles dependencies and setup
  *
- * @package Servicer
+ * @package AiPosts
  */
 
-namespace Servicer\Setup;
+namespace AiPosts\Setup;
 
-use Servicer\Traits\Helpers;
+use AiPosts\Traits\Helpers;
 
 defined('ABSPATH') || exit;
 
@@ -36,13 +36,13 @@ class Option
 			return;
 		} // Display Menu only for wp-admin area
 
-		$menu_id = 'sr-option';
+		$menu_id = 'ap-option';
 
 		$wp_admin_bar->add_menu(
 			array(
 				'id'     => $menu_id,
 				'parent' => null, // use 'top-secondary' for toggle menu position.
-				'href'   => home_url('sr-board'),
+				'href'   => home_url('ap-board'),
 				'title'  => '<span style="display:flex;align-items:center;gap:10px;">' . self::svg_icon('admin_bar') . '<span>SR</span></span>',
 			)
 		);
@@ -50,8 +50,8 @@ class Option
 			array(
 				'parent' => $menu_id,
 				'title'  => __('SR Board', 'text-domain'),
-				'id'     => 'sr-board',
-				'href'   => home_url('sr-board'),
+				'id'     => 'ap-board',
+				'href'   => home_url('ap-board'),
 
 			)
 		); */
@@ -65,17 +65,30 @@ class Option
 
 	public function plugin_menu()
 	{
-		add_menu_page('Servicer', 'Servicer', 'manage_options', 'sr-option', array(
+		add_menu_page('AiPosts', 'AiPosts', 'manage_options', 'ap-option', array(
 			$this,
 			'option_page_view'
-		), self::svg_icon('servicer', true), 2);
-		add_submenu_page(null, 'Servicer', 'Servicer', 'manage_options', 'sr-option', array(
+		), self::svg_icon('aiposts', true), 2);
+		add_submenu_page(null, 'AiPosts', 'AiPosts', 'manage_options', 'ap-option', array(
 			$this,
 			'option_page_view'
+		));
+		add_submenu_page(null, 'AP Settings', 'AiPosts', 'manage_options', 'ap-option', array(
+			$this,
+			'option_child_view'
 		));
 	}
 
 	public function option_page_view()
+	{
+
+		$post_types = self::get_authors();
+		$icons      = self::svg_icon();
+
+		_get_template('option');
+	}
+
+	public function option_child_view()
 	{
 
 		$post_types = self::get_authors();

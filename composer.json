@@ -1,5 +1,5 @@
 {
-	"name": "codergens/servicer",
+	"name": "codergens/aiposts",
 	"description": "Codergens plugin boilerplate.",
 	"keywords": [
 		"WordPress",
@@ -16,7 +16,7 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"Servicer\\": "./inc"
+			"AiPosts\\": "./inc"
 		},
 		"files": [
 			"./inc/Functions.php"

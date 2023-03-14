@@ -1,16 +1,17 @@
 <?php
+
 /**
  * Handles stuff during plugin uninstallation
  *
- * @package Servicer
+ * @package AiPosts
  */
 
 defined('WP_UNINSTALL_PLUGIN') || exit;
 
 $options = array(
-	'servicer_installed_at',
-	'servicer_version',
-	'servicer_license',
+	'aiposts_installed_at',
+	'aiposts_version',
+	'aiposts_license',
 );
 
 foreach ($options as $option) {

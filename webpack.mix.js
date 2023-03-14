@@ -1,5 +1,5 @@
 /**
- * servicer uses Laravel Mix for compiling assets.
+ * aiposts uses Laravel Mix for compiling assets.
  */
 
 let mix = require("laravel-mix");

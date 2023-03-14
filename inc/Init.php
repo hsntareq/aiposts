@@ -2,10 +2,10 @@
 /**
  * Handles initialization of classes
  *
- * @package Servicer
+ * @package AiPosts
  */
 
-namespace Servicer;
+namespace AiPosts;
 
 defined( 'ABSPATH' ) || exit;
 

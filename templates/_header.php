@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="sr-h-full" lang="en">
+<html class="ap-h-full" lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -11,4 +11,4 @@
 
 </head>
 
-<body class="sr-h-full">
+<body class="ap-h-full">

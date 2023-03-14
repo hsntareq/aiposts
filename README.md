@@ -1,1 +1,1 @@
-# Servicer Boilerplate for CoderGens
+# AiPosts Boilerplate for CoderGens
