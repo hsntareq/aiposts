@@ -37,8 +37,12 @@ function _get_uri(): string
 	return explode('/', urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?? ''))[1];
 }
 
-function _get_template($name, $die = false, $dir = null): void
+function _get_template($name, $arr = [], $die = false, $dir = null): void
 {
+	if (!empty($arr)) {
+		extract($arr);
+	}
+
 	$file = AIPOSTS_DIR_PATH . "templates/{$name}.php";
 	if (file_exists($file)) {
 		include $file;

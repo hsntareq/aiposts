@@ -228,10 +228,10 @@
 
             </table>
 
-            <?php //_get_template('components/home-client-overview', true);
+            <?php //_get_template('components/home-client-overview',[], true);
             ?>
 
         </main>
     </section>
 </div>
-<?php _get_template('_footer', true); ?>
+<?php _get_template('_footer', [], true); ?>

@@ -6,3 +6,44 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+[sr-tooltip] {
+    cursor: pointer;
+}
+
+[sr-tooltip]::before {
+    content: attr(sr-tooltip);
+    position: absolute;
+    background: white;
+    padding: 5px;
+    bottom: calc(100% + 5px);
+    width: 150px;
+    box-shadow: -1px 1px 5px -3px;
+    border-radius: 5px;
+    right: calc(100% - (75px + 9px));
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+}
+
+[sr-tooltip]:hover::before,
+[sr-tooltip]:focus::before,
+[sr-tooltip]:active::before {
+    transition: all 300ms;
+    visibility: visible;
+    opacity: 1;
+    height: unset;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type=number].sr_number::-webkit-outer-spin-button,
+input[type=number].sr_number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number].sr_number {
+    -moz-appearance: textfield;
+}

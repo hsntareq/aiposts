@@ -77,18 +77,20 @@ class Option
 	public function option_page_view()
 	{
 
-		$post_types = self::get_authors();
-		$icons      = self::svg_icon();
+		$arr['post_types'] = self::get_all_post_types();
+		$arr['icons']      = self::svg_icon();
+		$arr['input_classes']      = ' !ap-form-input ap-w-full !ap-ring-1 !ap-ring-gray-300 focus:!ap-ring-gray-400 focus:!ap-outline-none !ap-rounded focus:!ap-shadow-sm !ap-border-0 ';
 
-		_get_template('option');
+
+		_get_template('option', $arr);
 	}
 
 	public function option_child_view()
 	{
 
-		$post_types = self::get_authors();
-		$icons      = self::svg_icon();
+		$arr['post_types'] = self::get_all_post_types();
+		$arr['icons']      = self::svg_icon();
 
-		_get_template('option-child');
+		_get_template('option-child', $arr);
 	}
 }

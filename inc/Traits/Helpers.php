@@ -16,7 +16,7 @@ defined('ABSPATH') || exit;
 trait Helpers
 {
 
-	public static function svg_icon($key = null, $base46 = false)
+	public static function svg_icon($key = null, $base64 = false)
 	{
 
 		$svg_path = AIPOSTS_ASSET_PATH . 'images' . DIRECTORY_SEPARATOR . 'svg_icons';
@@ -33,7 +33,7 @@ trait Helpers
 
 		$svg_array = apply_filters('sr_svg_icon', $svg_files_array);
 
-		return empty($key) ? $svg_array : (true === $base46 ? 'data:image/svg+xml;base64,' . base64_encode($svg_array[$key]) : $svg_array[$key]);
+		return empty($key) ? $svg_array : (true === $base64 ? 'data:image/svg+xml;base64,' . base64_encode($svg_array[$key]) : ($svg_array[$key] ?? 'N/A'));
 	}
 
 	/**
