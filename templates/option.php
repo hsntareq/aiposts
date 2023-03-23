@@ -12,7 +12,6 @@
     ?>
     <div class="ap-mt-5 ap-w-full ap-flex ap-gap-10 ap-items-start">
 
-
         <main class="ap-flex-1">
             <form action="" class="xl:ap-w-2/3 ap-w-full">
 
@@ -30,24 +29,29 @@
                     </button>
                 </div>
             </form>
-            
+
             <form action="" class="xl:ap-w-2/3 ap-w-full">
-                <div class="ap-bg-gray-50 ap-p-5 ap-rounded-bl-2xl ap-rounded-tr-2xl ap-shadow-md ap-gap-5 ap-border ap-border-gray-300">
+                <div class="ap-bg-gray-50 ap-p-5 ap-rounded-bl-2xl ap-rounded-tr-2xl ap-shadow-md ap-gap-5 ap-border ap-border-gray-300" x-data="{
+                        posts: [
+                            { title: 'Red', type:'posts' },
+                            { title: 'Orange', type:'pages' },
+                            { title: 'Yellow', type:'books' },
+                        ],
+                        get filteredItems() {
+                            return this.posts
+                        }
+                    }">
                     <div class="ap-mb-3 ap-clone-post">
 
-                        <div class="ap-added-questions" x-data="{ colors: [
-                            { id: 1, title: 'Red' },
-                            { id: 2, title: 'Orange' },
-                            { id: 3, title: 'Yellow' },
-                        ]}">
-                            <template x-for="color in colors" :key="color.id">
+                        <div class="ap-added-questions">
+                            <template x-for="(color, index) in filteredItems" :key="index">
                                 <div class="ap-flex ap-justify-between ap-gap-5 ap-mb-3">
                                     <div class="ap-flex-[2] ap-relative" for="keywords">
                                         <input class="<?= $input_classes ?>" type="text" name="keywords" id="keywords" placeholder="Keywords / Phrase for your post" autocomplete="off" :value="color.title" />
                                     </div>
 
                                     <div class="ap-w-36 ap-shrink-0">
-                                        <select class="<?= $input_classes ?>" name="post_type" id="post_type">
+                                        <select :value="color.type" class="<?= $input_classes ?>" name="post_type" id="post_type">
                                             <?php foreach ($post_types as $item) : ?>
                                                 <option value="post"><?php echo $item; ?></option>
                                             <?php endforeach; ?>
@@ -60,11 +64,11 @@
                             </template>
                         </div>
 
-                        <div class="ap-flex ap-justify-between ap-gap-5 ap-mb-3">
+                        <div class="ap-flex ap-justify-between ap-gap-5 ap-mb-3 ap-group">
                             <div class="ap-flex-1 ap-relative" for="keywords">
                                 <input class="<?= $input_classes ?>" type="text" name="keywords" id="keywords" placeholder="Keywords / Phrase for your post" autocomplete="off" />
 
-                                <span sr-tooltip="This is the maximum token number you want to use for a request." class="ap-absolute ap-right-2 ap-top-[.7rem]"><span class="ap-text-gray-300 hover:ap-text-gray-400 ap-transition-all"><?php _get_svg('sr_help'); ?></span></span>
+                                <span sr-tooltip="This is the maximum token number you want to use for a request." class="ap-invisible group-hover:ap-visible ap-absolute ap-right-2 ap-top-[.7rem]"><span class="ap-text-gray-300 hover:ap-text-gray-400 ap-transition-all"><?php _get_svg('sr_help'); ?></span></span>
                             </div>
                             <div class="ap-w-36 ap-shrink-0">
                                 <select class="<?= $input_classes ?>" name="post_type" id="post_type">
@@ -73,12 +77,9 @@
                                     <?php endforeach; ?>
                                 </select>
                             </div>
-                            <button @click.prevent="$refs.tpl.remove()" class="ap-w-12 ap-transition-all ap-text-white ap-bg-[#2271b1]  hover:ap-bg-[#135e96] focus:ap-bg-[#134066] ap-px-3 ap-rounded">
+                            <button @click.prevent="colors.push({ id: 4, title: 'green' })" class="ap-w-12 ap-transition-all ap-text-white ap-bg-[#2271b1]  hover:ap-bg-[#135e96] focus:ap-bg-[#134066] ap-px-3 ap-rounded">
                                 <?php _get_svg('sr_plus_btn', 'ap-flex-1') ?>
                             </button>
-                            <template x-ref="tpl">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo officiis tenetur ea iure, suscipit placeat facilis asperiores deserunt molestias voluptatibus harum, consequuntur adipisci voluptas. Sapiente quidem non ea accusamus veritatis.
-                            </template>
                         </div>
                     </div>
                     <p class="ap-mt-5">To generate the expected posts, click the Generate button and ensure that the keywords for your post/page are correct. For additional assistance, visit the provided link. The contents will be generated using the GPT-4 API.</p>

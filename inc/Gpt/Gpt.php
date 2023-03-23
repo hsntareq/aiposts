@@ -30,7 +30,7 @@ class Gpt
             'max_tokens' => 100,
             'frequency_penalty' => 0,
             'presence_penalty' => 0.6,
-        ]);
+        ]); 
 
         $response = array();
         foreach (json_decode($complete, true)['choices'] as $key => $result) {
