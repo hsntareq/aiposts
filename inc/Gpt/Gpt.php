@@ -16,8 +16,7 @@ class Gpt
     public function get_openai_generated_data(): void
     {
 
-        // $open_ai_key = getenv('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');
-        $open_ai_key = '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';
+        $open_ai_key = get_option('ap_api_key');
         $open_ai = new OpenAi($open_ai_key);
         $questions = array(
             'List me some fruits',
