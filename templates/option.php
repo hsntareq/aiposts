@@ -16,7 +16,7 @@
         <main class="ap-flex-1">
             <form action="" class="xl:ap-w-2/3 ap-w-full">
 
-                <div class="ap-flex lg:ap-w-2/3 ap-w-full ap-bg-gray-50 ap-justify-start ap-p-5 ap-rounded-bl-2xl ap-rounded-tr-2xl ap-shadow-lg ap-gap-5 ap-border ap-border-gray-300 ap-mb-5">
+                <div class="ap-flex lg:ap-w-2/3 ap-w-full ap-bg-gray-50 ap-justify-start ap-p-5 ap-rounded-bl-2xl ap-rounded-tr-2xl ap-shadow-md ap-gap-5 ap-border ap-border-gray-300 ap-mb-5">
                     <div class="ap-flex-1 ap-relative" for="keywords">
                         <input class="sr_number <?= $input_classes ?>" type="number" name="token" id="token" placeholder="Maximum token" autocomplete="off" min="1" max="1000" step="1" />
                         <span sr-tooltip="This is the maximum token number you want to use for a request." class="ap-absolute ap-right-2 ap-top-[.7rem]"><span class="ap-text-gray-300 hover:ap-text-gray-400 ap-transition-all"><?php _get_svg('sr_help'); ?></span></span>
@@ -24,66 +24,40 @@
                     <div class="ap-flex-1" for="keywords">
                         <input class="<?= $input_classes ?> sr_number" type="number" min=".1" max="1.0" step=".1" name="keywords" id="keywords" placeholder="Temparature" autocomplete="off" />
                     </div>
-                    <button class="button button-primary !ap-flex ap-items-center ap-gap-2">
+                    <button class="ap-transition-all ap-text-white ap-bg-[#2271b1]  hover:ap-bg-[#135e96] focus:ap-bg-[#134066] ap-px-3 ap-rounded ap-flex ap-items-center ap-gap-2">
                         <?php _get_svg('sr_save', 'ap-flex-1') ?>
                         <span>Save</span>
                     </button>
                 </div>
             </form>
-
+            
             <form action="" class="xl:ap-w-2/3 ap-w-full">
-                <div class="ap-bg-gray-50 ap-p-5 ap-rounded-bl-2xl ap-rounded-tr-2xl ap-shadow-lg ap-gap-5 ap-border ap-border-gray-300">
+                <div class="ap-bg-gray-50 ap-p-5 ap-rounded-bl-2xl ap-rounded-tr-2xl ap-shadow-md ap-gap-5 ap-border ap-border-gray-300">
                     <div class="ap-mb-3 ap-clone-post">
-                        <div class="ap-flex ap-justify-between ap-gap-5 ap-mb-3">
-                            <div class="ap-flex-[2] ap-relative" for="keywords">
-                                <input class="<?= $input_classes ?>" type="text" name="keywords" id="keywords" placeholder="Keywords / Phrase for your post" autocomplete="off" />
 
-                                <span sr-tooltip="This is the maximum token number you want to use for a request." class="ap-absolute ap-right-2 ap-top-[.7rem]"><span class="ap-text-gray-300 hover:ap-text-gray-400 ap-transition-all"><?php _get_svg('sr_help'); ?></span></span>
-                            </div>
-                            <div class="ap-w-36 ap-shrink-0">
-                                <select class="<?= $input_classes ?>" name="post_type" id="post_type">
-                                    <?php foreach ($post_types as $item) : ?>
-                                        <option value="post"><?php echo $item; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                            <button class="ap-w-12 ap-transition-all ap-ring-inset ap-text-red focus:ap-ring ap-ring-1 ap-text-red-600 hover:ap-ring-2 ap-ring-red-500 ap-px-3 ap-rounded">
-                                <?php _get_svg('x-mark', 'ap-flex-1') ?>
-                            </button>
-                        </div>
-                        <div class="ap-flex ap-justify-between ap-gap-5 ap-mb-3">
-                            <div class="ap-flex-[2] ap-relative" for="keywords">
-                                <input class="<?= $input_classes ?>" type="text" name="keywords" id="keywords" placeholder="Keywords / Phrase for your post" autocomplete="off" />
+                        <div class="ap-added-questions" x-data="{ colors: [
+                            { id: 1, title: 'Red' },
+                            { id: 2, title: 'Orange' },
+                            { id: 3, title: 'Yellow' },
+                        ]}">
+                            <template x-for="color in colors" :key="color.id">
+                                <div class="ap-flex ap-justify-between ap-gap-5 ap-mb-3">
+                                    <div class="ap-flex-[2] ap-relative" for="keywords">
+                                        <input class="<?= $input_classes ?>" type="text" name="keywords" id="keywords" placeholder="Keywords / Phrase for your post" autocomplete="off" :value="color.title" />
+                                    </div>
 
-                                <span sr-tooltip="This is the maximum token number you want to use for a request." class="ap-absolute ap-right-2 ap-top-[.7rem]"><span class="ap-text-gray-300 hover:ap-text-gray-400 ap-transition-all"><?php _get_svg('sr_help'); ?></span></span>
-                            </div>
-                            <div class="ap-w-36 ap-shrink-0">
-                                <select class="<?= $input_classes ?>" name="post_type" id="post_type">
-                                    <?php foreach ($post_types as $item) : ?>
-                                        <option value="post"><?php echo $item; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                            <button class="ap-w-12 ap-transition-all ap-ring-inset ap-text-red focus:ap-ring ap-ring-1 ap-text-red-600 hover:ap-ring-2 ap-ring-red-500 ap-px-3 ap-rounded">
-                                <?php _get_svg('x-mark', 'ap-flex-1') ?>
-                            </button>
-                        </div>
-                        <div class="ap-flex ap-justify-between ap-gap-5 ap-mb-3">
-                            <div class="ap-flex-[2] ap-relative" for="keywords">
-                                <input class="<?= $input_classes ?>" type="text" name="keywords" id="keywords" placeholder="Keywords / Phrase for your post" autocomplete="off" />
-
-                                <span sr-tooltip="This is the maximum token number you want to use for a request." class="ap-absolute ap-right-2 ap-top-[.7rem]"><span class="ap-text-gray-300 hover:ap-text-gray-400 ap-transition-all"><?php _get_svg('sr_help'); ?></span></span>
-                            </div>
-                            <div class="ap-w-36 ap-shrink-0">
-                                <select class="<?= $input_classes ?>" name="post_type" id="post_type">
-                                    <?php foreach ($post_types as $item) : ?>
-                                        <option value="post"><?php echo $item; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                            <button class="ap-w-12 ap-transition-all ap-ring-inset ap-text-red focus:ap-ring ap-ring-1 ap-text-red-600 hover:ap-ring-2 ap-ring-red-500 ap-px-3 ap-rounded">
-                                <?php _get_svg('x-mark', 'ap-flex-1') ?>
-                            </button>
+                                    <div class="ap-w-36 ap-shrink-0">
+                                        <select class="<?= $input_classes ?>" name="post_type" id="post_type">
+                                            <?php foreach ($post_types as $item) : ?>
+                                                <option value="post"><?php echo $item; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                    <button class="ap-w-12 ap-transition-all ap-ring-inset ap-text-red focus:ap-ring ap-ring-1 ap-text-red-600 hover:ap-ring-2 ap-ring-red-500 ap-px-3 ap-rounded">
+                                        <?php _get_svg('x-mark', 'ap-flex-1') ?>
+                                    </button>
+                                </div>
+                            </template>
                         </div>
 
                         <div class="ap-flex ap-justify-between ap-gap-5 ap-mb-3">
@@ -99,14 +73,17 @@
                                     <?php endforeach; ?>
                                 </select>
                             </div>
-                            <button class="ap-w-12 ap-transition-all ap-text-white ap-bg-[#2271b1]  hover:ap-bg-[#135e96] focus:ap-bg-[#134066] ap-px-3 ap-rounded">
+                            <button @click.prevent="$refs.tpl.remove()" class="ap-w-12 ap-transition-all ap-text-white ap-bg-[#2271b1]  hover:ap-bg-[#135e96] focus:ap-bg-[#134066] ap-px-3 ap-rounded">
                                 <?php _get_svg('sr_plus_btn', 'ap-flex-1') ?>
                             </button>
+                            <template x-ref="tpl">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo officiis tenetur ea iure, suscipit placeat facilis asperiores deserunt molestias voluptatibus harum, consequuntur adipisci voluptas. Sapiente quidem non ea accusamus veritatis.
+                            </template>
                         </div>
                     </div>
                     <p class="ap-mt-5">To generate the expected posts, click the Generate button and ensure that the keywords for your post/page are correct. For additional assistance, visit the provided link. The contents will be generated using the GPT-4 API.</p>
                     <div class="ap-mt-3">
-                        <button class="button button-primary ap-flex ap-items-center !ap-py-3 !ap-text-lg ap-w-full">Generate Posts</button>
+                        <button class="ap-py-3 ap-text-lg ap-w-full ap-transition-all ap-text-white ap-bg-[#2271b1]  hover:ap-bg-[#135e96] focus:ap-bg-[#134066] ap-px-3 ap-rounded">Generate Posts</button>
                     </div>
                 </div>
             </form>

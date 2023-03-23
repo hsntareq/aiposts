@@ -10,6 +10,11 @@ use AiPosts\Traits\Helpers;
 
 defined('ABSPATH') || exit;
 
+
+class Helper
+{
+	use Helpers;
+}
 /**
  * @param $file_name
  *
@@ -65,10 +70,10 @@ function get_admin_page_url(string $menu_slug, $query = null, array $esc_options
 function _get_svg($key, $print = true, $base64 = false)
 {
 	if (false == $print) {
-		return Helpers::svg_icon($key, $base64);
+		return Helper::svg_icon($key, $base64);
 	}
 	ob_start();
-	echo Helpers::svg_icon($key, $base64);
+	echo Helper::svg_icon($key, $base64);
 	ob_end_flush();
 }
 

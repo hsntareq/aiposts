@@ -8,7 +8,7 @@ const formData = new FormData();
 formData.append('action', 'get_openai_data');
 let viewElement = document.querySelector('.view_response');
 
-
+/*
 fetch(ajaxurl,  {
     method: "POST",
     body: formData,
@@ -27,4 +27,4 @@ fetch(ajaxurl,  {
   })
   .catch((error) => {
     console.error("Error:", error);
-  });;
+  }); */
