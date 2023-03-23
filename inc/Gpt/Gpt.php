@@ -16,7 +16,7 @@ class Gpt
     public function get_openai_generated_data(): void
     {
 
-        $open_ai_key = get_option('ap_api_key');
+        $open_ai_key = get_option('open_ai_key');
         $open_ai = new OpenAi($open_ai_key);
         $questions = array(
             'List me some fruits',
@@ -30,7 +30,7 @@ class Gpt
             'max_tokens' => 100,
             'frequency_penalty' => 0,
             'presence_penalty' => 0.6,
-        ]); 
+        ]);
 
         $response = array();
         foreach (json_decode($complete, true)['choices'] as $key => $result) {

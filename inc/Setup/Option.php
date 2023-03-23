@@ -25,11 +25,19 @@ class Option
 	public function register(): void
 	{
 		add_action('admin_menu', array($this, 'plugin_menu'));
-		add_action('admin_bar_menu', array($this, 'ci_admin_bar_item'), 100);
+		add_action('admin_bar_menu', array($this, 'ap_admin_bar_menu'), 100);
+		add_action('admin_post_ap_settings_action', array($this, 'ap_settings_action'));
 	}
 
+	function ap_settings_action()
+	{
+		update_option('open_ai_key', $_POST['open_ai_key']);
 
-	function ci_admin_bar_item(\WP_Admin_Bar $wp_admin_bar)
+		wp_safe_redirect($_POST['redirect_to']);
+		// wp_redirect($_POST['redirect_to']);
+	}
+
+	function ap_admin_bar_menu(\WP_Admin_Bar $wp_admin_bar)
 	{
 
 		if (!is_admin()) {
@@ -62,19 +70,19 @@ class Option
 	{
 		add_menu_page('AiPosts', 'AiPosts', 'manage_options', 'ap-option', array(
 			$this,
-			'option_page_view'
+			'ap_generate_posts_view'
 		), self::svg_icon('aiposts', true), 2);
 		add_submenu_page(null, 'AiPosts', 'AiPosts', 'manage_options', 'ap-option', array(
 			$this,
-			'option_page_view'
+			'ap_generate_posts_view'
 		));
-		add_submenu_page('ap-option', 'AP Settings', 'AP Settings', 'manage_options', 'ap-option-child', array(
+		add_submenu_page('ap-option', 'AP Settings', 'AP Settings', 'manage_options', 'ap-settings', array(
 			$this,
-			'option_child_view'
+			'ap_settings_view'
 		));
 	}
 
-	public function option_page_view()
+	public function ap_generate_posts_view()
 	{
 
 		$arr['post_types'] = self::get_all_post_types();
@@ -85,12 +93,12 @@ class Option
 		_get_template('option', $arr);
 	}
 
-	public function option_child_view()
+	public function ap_settings_view()
 	{
 
 		$arr['post_types'] = self::get_all_post_types();
 		$arr['icons']      = self::svg_icon();
 
-		_get_template('option-child', $arr);
+		_get_template('settings', $arr);
 	}
 }
