@@ -6,6 +6,22 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+* {
+    box-sizing: unset;
+}
+
+a {
+    color: #2271b1;
+}
+
+table {
+    border-collapse: unset;
+}
+
+[x-cloak] {
+    display: none;
+}
+
 [sr-tooltip] {
     cursor: pointer;
 }

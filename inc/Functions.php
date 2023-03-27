@@ -37,6 +37,20 @@ function _sr_enqueue_script($file_name): void
  *
  * @return string
  */
+function ap_option($key = null)
+{
+	$ap_options = get_option('ap_options')['ap_fields'];
+	if (isset($ap_options[$key])) {
+		return $ap_options[$key];
+	}
+	return $ap_options;
+}
+
+/**
+ * Get uri from http request
+ *
+ * @return string
+ */
 function _get_uri(): string
 {
 	return explode('/', urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?? ''))[1];

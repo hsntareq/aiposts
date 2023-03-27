@@ -1,11 +1,10 @@
-<div class="ap-flex ap-items-center ap-justify-between ap-py-3 ap-pl-5 ap-pr-6
-        ap-rounded-md hover:ap-shadow ap-shadow-sm ap-transition hover:ap-cursor-pointer ap-border ap-bg-gray-50 ap-mb-5 ap-gap-5">
+<div class="<?= $field_wrapper ?>">
     <div>
-        <label class="ap-font-semibold ap-text-lg" for="">Label</label>
-        <p>Short Description for label</p>
+        <label class="ap-font-medium ap-text-lg" for="">Label</label>
+        <p><?= $field_desc ?? 'Short Description for label' ?></p>
     </div>
-    <div>
-        <select>
+    <div class="ap-w-[200px]">
+        <select class="!ap-px-2 !ap-py-1 ap-w-full">
             <option value="">New</option>
             <option value="">option</option>
         </select>

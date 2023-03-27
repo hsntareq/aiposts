@@ -7,7 +7,7 @@
         <?php foreach ($options as $key => $option) : ?>
             <label>
                 <span><?= $option; ?></span>
-                <input type="radio" name="<?= $ap_radio_test ?? 'ap_radiobutton' ?>[]" value="<?= $key; ?>" />
+                <input type="checkbox" name="ap_checkbox_test[<?= $key; ?>]" value="<?= $key; ?>" />
             </label>
         <?php endforeach; ?>
     </div>

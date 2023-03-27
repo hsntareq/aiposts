@@ -31,7 +31,12 @@ class Option
 
 	function ap_settings_action()
 	{
-		update_option('open_ai_key', $_POST['open_ai_key']);
+		$post = $_POST;
+		unset($post['action']);
+		unset($post['redirect_to']);
+		// pr(array('ap_fields' => $post));
+
+		update_option('ap_options', array('ap_fields' => $post));
 
 		wp_safe_redirect($_POST['redirect_to']);
 		// wp_redirect($_POST['redirect_to']);
@@ -72,7 +77,7 @@ class Option
 			$this,
 			'ap_generate_posts_view'
 		), self::svg_icon('aiposts', true), 2);
-		add_submenu_page(null, 'AiPosts', 'AiPosts', 'manage_options', 'ap-option', array(
+		add_submenu_page('', 'AiPosts', 'AiPosts', 'manage_options', 'ap-option', array(
 			$this,
 			'ap_generate_posts_view'
 		));
@@ -98,6 +103,7 @@ class Option
 
 		$arr['post_types'] = self::get_all_post_types();
 		$arr['icons']      = self::svg_icon();
+		$arr['field_wrapper_classes'] = 'ap-flex ap-items-center ap-justify-between ap-py-3 ap-pl-5 ap-pr-6 ap-rounded-md hover:ap-shadow ap-shadow-sm  ap-transitionhover:ap-cursor-pointer ap-border ap-bg-gray-50 ap-mb-5 ap-gap-5';
 
 		_get_template('settings', $arr);
 	}

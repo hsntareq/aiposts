@@ -40,7 +40,7 @@
                         get filteredItems() {
                             return this.posts
                         }
-                    }">
+                    }" x-cloak>
                     <div class="ap-mb-3 ap-clone-post">
 
                         <div class="ap-added-questions">
@@ -77,7 +77,7 @@
                                     <?php endforeach; ?>
                                 </select>
                             </div>
-                            <button @click.prevent="colors.push({ id: 4, title: 'green' })" class="ap-w-12 ap-transition-all ap-text-white ap-bg-[#2271b1]  hover:ap-bg-[#135e96] focus:ap-bg-[#134066] ap-px-3 ap-rounded">
+                            <button @click.prevent="posts.push({ id: 4, title: 'green' })" class="ap-w-12 ap-transition-all ap-text-white ap-bg-[#2271b1]  hover:ap-bg-[#135e96] focus:ap-bg-[#134066] ap-px-3 ap-rounded">
                                 <?php _get_svg('sr_plus_btn', 'ap-flex-1') ?>
                             </button>
                         </div>
