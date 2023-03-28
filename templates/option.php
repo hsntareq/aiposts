@@ -17,6 +17,32 @@
 		</div>
 	</div>
 
+	<div class="lg:ap-w-2/3 ap-w-full ap-bg-gray-50 ap-p-5 ap-rounded-bl-2xl ap-rounded-tr-2xl ap-shadow-md ap-gap-5 ap-border ap-border-gray-300 ap-mb-5"
+		x-data="{
+				products: [{title: 'Product one', qty:1, price: 12},{title: 'Product Two', qty:1, price: 12}],
+				priceTotal(){
+					let priceData = [];
+					this.products.forEach(item=> priceData.push(item.price * item.qty));
+					return priceData.reduce((a, c) => a + c, 0);
+				}
+			}">
+		<ul class="ap-w-full">
+			<template x-for="(color, index) in products">
+				<li class="ap-flex ap-justify-between ap-items-center ap-gap-3">
+					<span x-text="index+1" class="ap-px-2"></span>
+					<span x-text="color.title" class="ap-flex-1"></span>
+					<input type="number" x-model="color.qty" class="ap-w-14 ap-text-center" />
+					<span x-text="color.price * color.qty"></span>
+				</li>
+			</template>
+		</ul>
+
+		<div class="ap-flex ap-justify-between ap-items-center ap-gap-3">
+			<span>Total</span>
+			<span x-text="priceTotal()"></span>
+		</div>
+	</div>
+
 
 	<div class="ap-mt-5 ap-w-full ap-flex ap-gap-10 ap-items-start">
 
