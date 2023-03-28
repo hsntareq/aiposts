@@ -36,7 +36,7 @@ class Option
 		unset($post['redirect_to']);
 		// pr(array('ap_fields' => $post));
 
-		update_option('ap_options', array('ap_fields' => $post));
+		update_option('ap_options', $post);
 
 		wp_safe_redirect($_POST['redirect_to']);
 		// wp_redirect($_POST['redirect_to']);

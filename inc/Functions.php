@@ -39,7 +39,7 @@ function _sr_enqueue_script($file_name): void
  */
 function ap_option($key = null)
 {
-	$ap_options = get_option('ap_options')['ap_fields'];
+	$ap_options = get_option('ap_options');
 	if (isset($ap_options[$key])) {
 		return $ap_options[$key];
 	}
