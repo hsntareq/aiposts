@@ -127,8 +127,45 @@
 					</div>
 				</div>
 			</form>
+			<!--
+aiposts:[
+					{title:'AiPost title one AiPost title one AiPost title one AiPost title one AiPost title one title one title one  title one AiPost title one AiPost title one ', content:'<p>Dear CoderGens,</p><p>I am Hasan Tareq and I am writing to apply for the position of Frontend Developer. With my 3+ years of experience in the field, I believe I am the perfect candidate for this job.</p><p>I am confident that my knowledge and skills in HTML, CSS, JavaScript, React, and Angular will be an asset to your team.</p><p>I look forward to hearing from you.</p><p>Sincerely,</p><p>Hasan Tareq</p>'},
+					{title:'AiPost title one', content:'<p>Dear Manager,</p><p>I am writing to express my interest in the Frontend Developer position at CogerGens. With a degree in Computer Science and five years of experience developing front-end applications, I believe I am the perfect candidate for the role.</p><p>During my time at JoomShaper, I worked on a variety of projects, from creating webpages to developing mobile applications. My experience with HTML, CSS, and JavaScript enabled me to build aesthetically pleasing, user-friendly interfaces that met the business’s requirements. I also have experience using React and Angular frameworks to create interactive, dynamic webpages.</p><p>In addition to my technical skills, I am a highly organized and detail-oriented worker. I am able to work independently as well as in a team setting, and I am comfortable taking initiative when necessary. I am also adept at troubleshooting and debugging code, and I am always eager to learn new technologies and techniques.</p><p>I am confident that my qualifications and experience make me an ideal candidate for this position. I would welcome the opportunity to discuss my candidacy further and look forward to hearing from you.</p><p>Sincerely,</p><p>Hasan Tareq</p>'},
+					{title:'AiPost title two', content:'<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate neque quasi sequi similique earum odio molestiae maxime, adipisci voluptates facere expedita non magnam incidunt hic cumque nostrum numquam nesciunt mollitia! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate neque quasi sequi similique earum odio molestiae maxime, adipisci voluptates facere expedita non magnam incidunt hic cumque nostrum numquam nesciunt mollitia!</p>'},
+					{title:'AiPost title three', content:'<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate neque quasi sequi similique earum odio </p><p> molestiae maxime, adipisci voluptates facere expedita non magnam incidunt hic cumque nostrum numquam nesciunt mollitia!</p>'},
+					{title:'AiPost title four', content:'<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate neque quasi sequi similique earum odio </p><p> molestiae maxime, adipisci voluptates facere expedita non magnam incidunt hic cumque nostrum numquam nesciunt mollitia!</p><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate neque quasi sequi similique earum odio </p><p> molestiae maxime, adipisci voluptates facere expedita non magnam incidunt hic cumque nostrum numquam nesciunt mollitia!</p>'},
+					]
+ -->
+			<div class="view_response ap-mt-10" x-data="{aiposts:[]}">
 
-			<div class="view_response ap-mt-10"></div>
+				<template x-for="post in aiposts">
+					<div class="ap-bg-gray-50 ap-mb-5 ap-shadow-md ap-rounded-sm">
+						<div class="ap-py-3 ap-px-5 ap-border-b">
+							<h3 class="ap-text-xl" x-text="post.title"></h3>
+						</div>
+						<div class="[&_p]:ap-mb-4 [&_p]:ap-text-base ap-px-5 ap-pt-4 ap-pb-2" x-html="post.content">
+						</div>
+						<div class="ap-flex ap-justify-between ap-py-4 ap-px-5 ap-border-t">
+							<button
+								class="ap-py-1 ap-px-3 ap-bg-red-50 hover:ap-bg-red-100 active:ap-bg-red-200 ap-transition-all ap-border-0 ap-ring-1 focus:ap-ring-1 ap-ring-red-300">Remove</button>
+							<div class="ap-flex ap-gap-2">
+								<select class="ap-border-0 focus:ap-border-0 !ap-bg-transparent">
+									<option value="post">Posts</option>
+									<option value="page">Pages</option>
+								</select>
+								<button
+									class="ap-py-1 ap-px-3 ap-bg-blue-50 hover:ap-bg-blue-100 active:ap-bg-blue-200 ap-transition-all ap-border-0 ap-ring-1 focus:ap-ring-1 ap-ring-blue-300">Create</button>
+								<button
+									class="ap-py-1 ap-px-3 ap-bg-orange-50 hover:ap-bg-orange-100 active:ap-bg-orange-200 ap-transition-all ap-border-0 ap-ring-1 focus:ap-ring-1 ap-ring-orange-300">Draft</button>
+								<button
+									class="ap-py-1 ap-px-3 ap-bg-green-50 hover:ap-bg-green-100 active:ap-bg-green-200 ap-transition-all ap-border-0 ap-ring-1 focus:ap-ring-1 ap-ring-green-300">Regenerate</button>
+							</div>
+
+						</div>
+					</div>
+				</template>
+
+			</div>
 
 		</main>
 	</div>

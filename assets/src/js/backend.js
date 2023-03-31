@@ -25,14 +25,30 @@ apGenerateBtn && apGenerateBtn.addEventListener('click',(e)=>{
     .then((response) => response.json())
     .then((data) => {
 
+		let aiPostData = [];
 		data.forEach(item => {
+			let answer = item.a.split('\n').map(e => {
+                return e && '<p>' + e + '</p>';
+            });
+
+			aiPostData.push({title:item.q, content: answer.join('')})
+
+		})
+
+		Alpine.data('aiposts', () => aiPostData);
+		console.log(aiposts);
+
+		// console.log(aiPostData);
+
+
+		/* data.forEach(item => {
 			console.log(item);
 
             let answer = item.a.split('\n').map(e => {
                 return e && '<p>' + e + '</p>';
             });
-            viewElement.innerHTML += `<div class="ap-p-3 ap-bg-gray-50 ap-mb-5 ap-shadow-md ap-rounded-sm"><h3 class="ap-text-lg ap-mb-3">${item.q}</h3>${answer.join('')}</div>`;
-        });
+            viewElement.innerHTML += `<div class="ap-p-3 ap-bg-gray-50 ap-mb-5 ap-shadow-md ap-rounded-sm [&_p]:ap-mb-3"><h3 class="ap-text-lg ap-mb-3">${item.q}</h3>${answer.join('')}</div>`;
+        }); */
       /* }else{
         viewElement.innerHTML += `<div class="ap-p-3 ap-bg-gray-50 ap-mb-5 ap-shadow-md ap-rounded-sm">Please add some keyword to generate AI post.</div>`;
 
