@@ -36,6 +36,7 @@ class Gpt {
 				'presence_penalty' => 0.6,
 			] );
 
+
 			$response = array();
 			foreach ( json_decode( $complete, true )['choices'] as $key => $result ) {
 				$response[] = array(
@@ -43,7 +44,6 @@ class Gpt {
 					'a' => $result['text']
 				);
 			}
-
 			wp_send_json( $response );
 
 
@@ -51,5 +51,6 @@ class Gpt {
 		} else {
 			wp_send_json( array(), true );
 		}
+
 	}
 }

@@ -7,7 +7,7 @@ console.log('log is working',ajaxurl);
 const apRequestForm = document.getElementById("ap_request_form");
 const apGenerateBtn = document.getElementById("ap_generate_btn");
 
-apGenerateBtn.addEventListener('click',(e)=>{
+apGenerateBtn && apGenerateBtn.addEventListener('click',(e)=>{
   e.preventDefault();
 
   const formData = new FormData(apRequestForm);
@@ -25,22 +25,18 @@ apGenerateBtn.addEventListener('click',(e)=>{
     .then((response) => response.json())
     .then((data) => {
 
-      console.log(data);
-      let arrayData = data.choices && data.choices.length > 0 || data && data.length > 0
+		data.forEach(item => {
+			console.log(item);
 
-      if(data.choices && data.choices.length > 0 || data && data.length > 0){
-
-        data.choices.forEach(element => {
-            let result = element.text.split('\n').map(e => {
+            let answer = item.a.split('\n').map(e => {
                 return e && '<p>' + e + '</p>';
             });
-            viewElement.innerHTML += `<div class="ap-p-3 ap-bg-gray-50 ap-mb-5 ap-shadow-md ap-rounded-sm">${result.join('')}</div>`;
-            console.log(result);
+            viewElement.innerHTML += `<div class="ap-p-3 ap-bg-gray-50 ap-mb-5 ap-shadow-md ap-rounded-sm"><h3 class="ap-text-lg ap-mb-3">${item.q}</h3>${answer.join('')}</div>`;
         });
-      }else{
+      /* }else{
         viewElement.innerHTML += `<div class="ap-p-3 ap-bg-gray-50 ap-mb-5 ap-shadow-md ap-rounded-sm">Please add some keyword to generate AI post.</div>`;
 
-      }
+      } */
     })
     .catch((error) => {
       console.error("Error:", error);
