@@ -18,7 +18,6 @@
 	</div>
 
 	<div class="ap-mt-5 ap-w-full ap-flex ap-gap-10 ap-items-start">
-
 		<main class="ap-flex-1">
 			<form action="" class="xl:ap-w-2/3 ap-w-full">
 
@@ -48,23 +47,7 @@
 							{ title: 'Write me a sample feedback.', type:'books' }, -->
 			<form action="" class="xl:ap-w-2/3 ap-w-full" id="ap_request_form">
 				<div class="ap-bg-gray-50 ap-p-5 ap-rounded-bl-2xl ap-rounded-tr-2xl ap-shadow-md ap-gap-5 ap-border ap-border-gray-300"
-					x-data="{
-						posts: [
-
-						],
-						get filteredItems() {
-							return this.posts
-						},
-						addItemToPostList(){
-							console.log($refs.apInputType.value);
-							this.posts.push({
-								title: $refs.apInputKey.value,
-								type: $refs.apInputType.value
-							})
-							$refs.apInputKey.value = '';
-							$refs.apInputType.value = 'post';
-						}
-					}" x-cloak>
+					x-data="ap_post_generate($refs)" x-cloak>
 					<div class="ap-mb-3 ap-clone-post">
 
 						<div class="ap-added-questions">
@@ -127,15 +110,7 @@
 					</div>
 				</div>
 			</form>
-			<!--
-aiposts:[
-					{title:'AiPost title one AiPost title one AiPost title one AiPost title one AiPost title one title one title one  title one AiPost title one AiPost title one ', content:'<p>Dear CoderGens,</p><p>I am Hasan Tareq and I am writing to apply for the position of Frontend Developer. With my 3+ years of experience in the field, I believe I am the perfect candidate for this job.</p><p>I am confident that my knowledge and skills in HTML, CSS, JavaScript, React, and Angular will be an asset to your team.</p><p>I look forward to hearing from you.</p><p>Sincerely,</p><p>Hasan Tareq</p>'},
-					{title:'AiPost title one', content:'<p>Dear Manager,</p><p>I am writing to express my interest in the Frontend Developer position at CogerGens. With a degree in Computer Science and five years of experience developing front-end applications, I believe I am the perfect candidate for the role.</p><p>During my time at JoomShaper, I worked on a variety of projects, from creating webpages to developing mobile applications. My experience with HTML, CSS, and JavaScript enabled me to build aesthetically pleasing, user-friendly interfaces that met the business’s requirements. I also have experience using React and Angular frameworks to create interactive, dynamic webpages.</p><p>In addition to my technical skills, I am a highly organized and detail-oriented worker. I am able to work independently as well as in a team setting, and I am comfortable taking initiative when necessary. I am also adept at troubleshooting and debugging code, and I am always eager to learn new technologies and techniques.</p><p>I am confident that my qualifications and experience make me an ideal candidate for this position. I would welcome the opportunity to discuss my candidacy further and look forward to hearing from you.</p><p>Sincerely,</p><p>Hasan Tareq</p>'},
-					{title:'AiPost title two', content:'<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate neque quasi sequi similique earum odio molestiae maxime, adipisci voluptates facere expedita non magnam incidunt hic cumque nostrum numquam nesciunt mollitia! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate neque quasi sequi similique earum odio molestiae maxime, adipisci voluptates facere expedita non magnam incidunt hic cumque nostrum numquam nesciunt mollitia!</p>'},
-					{title:'AiPost title three', content:'<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate neque quasi sequi similique earum odio </p><p> molestiae maxime, adipisci voluptates facere expedita non magnam incidunt hic cumque nostrum numquam nesciunt mollitia!</p>'},
-					{title:'AiPost title four', content:'<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate neque quasi sequi similique earum odio </p><p> molestiae maxime, adipisci voluptates facere expedita non magnam incidunt hic cumque nostrum numquam nesciunt mollitia!</p><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate neque quasi sequi similique earum odio </p><p> molestiae maxime, adipisci voluptates facere expedita non magnam incidunt hic cumque nostrum numquam nesciunt mollitia!</p>'},
-					]
- -->
+
 			<div class="view_response ap-mt-10" x-data="{aiposts:[]}">
 
 				<template x-for="post in aiposts">
