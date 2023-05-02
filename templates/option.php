@@ -111,7 +111,7 @@
 				</div>
 			</form>
 
-			<div class="view_response ap-mt-10" x-data="{aiposts:[]}">
+			<div class="view_response ap-mt-10" x-data="{aiposts:window.appState.aiposts}">
 
 				<template x-for="post in aiposts">
 					<div class="ap-bg-gray-50 ap-mb-5 ap-shadow-md ap-rounded-sm">
